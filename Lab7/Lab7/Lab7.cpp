@@ -5,6 +5,7 @@ using namespace std;
 
 int sum(const std::vector<int> &v);
 int max(const std::vector<int> &v);
+int min(const std::vector<int> &v);
 
 int main()
 {
@@ -19,12 +20,14 @@ int main()
 		cout << values[i] << " ";
 	}
 
-	// print vector sum 
+	// print sum of the values in the vector
 	cout << "\nThe sum of the vector is: " << sum(values);
 
-	// print vector sum 
+	// print the max value in the vector
 	cout << "\nThe max value in the vector is: " << max(values);
 
+	// print the min value in the vector
+	cout << "\nThe min value in the vector is: " << min(values);
 
 	cout << endl;
 	system("pause");
@@ -52,4 +55,17 @@ int max(const std::vector<int> &v)
 		}
 	}
 	return max;
+}
+
+int min(const std::vector<int> &v)
+{
+	int min = v[0];
+
+	for (int i = 1; i < v.size(); i++)
+	{
+		if (v[i] < min) {
+			min = v[i];
+		}
+	}
+	return min;
 }
