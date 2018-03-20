@@ -4,6 +4,8 @@
 using namespace std;
 
 int sum(const std::vector<int> &v);
+int max(const std::vector<int> &v);
+
 int main()
 {
 	cout << "Lab 7 " << endl;
@@ -20,6 +22,9 @@ int main()
 	// print vector sum 
 	cout << "\nThe sum of the vector is: " << sum(values);
 
+	// print vector sum 
+	cout << "\nThe max value in the vector is: " << max(values);
+
 
 	cout << endl;
 	system("pause");
@@ -34,4 +39,17 @@ int sum(const std::vector<int> &v)
 		sum += v[i];
 	}
 	return sum;
+}
+
+int max(const std::vector<int> &v)
+{
+	int max = v[0];
+
+	for (int i = 1; i < v.size(); i++)
+	{
+		if (v[i] > max) {
+			max = v[i];
+		}
+	}
+	return max;
 }
