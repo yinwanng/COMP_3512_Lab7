@@ -6,17 +6,19 @@ using namespace std;
 int sum(const std::vector<int> &v);
 int max(const std::vector<int> &v);
 int min(const std::vector<int> &v);
+
 double average(const std::vector<int> &v);
 
 int main()
 {
-	cout << "Lab 7 " << endl;
+	cout << "Lab 7 " << endl << endl;
 
 	// initialize vector with values
 	vector<int> values{ 5, 10, 15, 20, 25, 25 };
 
 
 	// print vector content
+	cout << "The numbers in the vector are: ";
 	for (int i = 0; i < values.size(); i++) {
 		cout << values[i] << " ";
 	}
@@ -33,12 +35,14 @@ int main()
 	// print the average value in the vector
 	cout << "\nThe average value in the vector is: " << average(values);
 
-	cout << endl;
+	cout << endl << endl;
 	system("pause");
 	return 0;
 }
 
-
+// Calculates the sum of the values in the vector
+// PRE: The vector must contain values and cannot be empty
+// POST: Returns the sum of the values 
 int sum(const std::vector<int> &v)
 {
 	int sum = 0;
@@ -48,6 +52,9 @@ int sum(const std::vector<int> &v)
 	return sum;
 }
 
+// Finds the max value in the vector
+// PRE: The vector must contain values and cannot be empty
+// POST: Returns the max value in the vector
 int max(const std::vector<int> &v)
 {
 	int max = v[0];
@@ -61,6 +68,9 @@ int max(const std::vector<int> &v)
 	return max;
 }
 
+// Finds the min value in the vector
+// PRE: The vector must contain values and cannot be empty
+// POST: Returns the min value in the vector
 int min(const std::vector<int> &v)
 {
 	int min = v[0];
@@ -74,9 +84,11 @@ int min(const std::vector<int> &v)
 	return min;
 }
 
+// Finds the average value in the vector
+// PRE: The vector must contain values and cannot be empty
+// POST: Returns the average value in the vector
 double average(const std::vector<int> &v)
 {
 	double total = sum(v);
-
 	return total / v.size();
 }
