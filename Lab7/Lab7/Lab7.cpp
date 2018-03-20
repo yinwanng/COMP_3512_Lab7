@@ -6,6 +6,7 @@ using namespace std;
 int sum(const std::vector<int> &v);
 int max(const std::vector<int> &v);
 int min(const std::vector<int> &v);
+double average(const std::vector<int> &v);
 
 int main()
 {
@@ -28,6 +29,9 @@ int main()
 
 	// print the min value in the vector
 	cout << "\nThe min value in the vector is: " << min(values);
+
+	// print the average value in the vector
+	cout << "\nThe average value in the vector is: " << average(values);
 
 	cout << endl;
 	system("pause");
@@ -68,4 +72,11 @@ int min(const std::vector<int> &v)
 		}
 	}
 	return min;
+}
+
+double average(const std::vector<int> &v)
+{
+	double total = sum(v);
+
+	return total / v.size();
 }
