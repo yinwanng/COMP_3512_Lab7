@@ -10,9 +10,11 @@ namespace Lab7UnitTest
 	TEST_CLASS(UnitTest1)
 	{
 	public:
+		vector<int> values2 = { 3 };
 		vector<int> values = { 5, 10, 15, 20, 25, 25 };
 		double value = static_cast<double>(100) / 6;
 
+		// ver 1
 		TEST_METHOD(TestSum)
 		{
 			Assert::AreEqual(100, sum(values));
@@ -32,6 +34,28 @@ namespace Lab7UnitTest
 		{
 			Assert::AreEqual(value, average(values));
 		}
+
+		// ver 2
+		TEST_METHOD(TestSum2)
+		{
+			Assert::AreEqual(3, sum(values2));
+		}
+
+		TEST_METHOD(TestMin2)
+		{
+			Assert::AreEqual(3, min(values2));
+		}
+
+		TEST_METHOD(TestMax2)
+		{
+			Assert::AreEqual(3, max(values2));
+		}
+
+		TEST_METHOD(TestAverage2)
+		{
+			Assert::AreEqual(3.0, average(values2));
+		}
+
 
 	};
 }
